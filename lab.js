@@ -1,5 +1,7 @@
 // Part 1: Feeling Loopy Assignment
 
+const { json } = require("express");
+
 let parseme ="ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 let stilllooking = true;
 
@@ -79,10 +81,12 @@ function convertToJSON(anarray){
         j = i+1;
         for (data = 0; data < rows; data++){
            tempObject[anarray[0][data]] = anarray[j][data];
-        //    continue
         }
-        console.log(tempObject)
+        //Need to fix this not pushing correctly.
+        jsonarray.push(tempObject)
     }
+    jsonarray.reverse()
+    console.log(jsonarray)
 }
 
 getColumns();
