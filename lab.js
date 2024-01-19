@@ -10,13 +10,16 @@ function getRows() {
             rowcount += 1;
             console.log(rowcount);
             return rowcount;
-        }
-        if (parseme.charAt(i) == ",") {
+        } else if (parseme.charAt(i) == ",") {
             rowcount += 1;
             i++;
+        } else {
+            continue;
         }
     }
 }
+
+getRows();
 
 // while (stilllooking) {
 //     let cell1 = "";
