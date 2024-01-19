@@ -21,41 +21,44 @@ function getRows() {
 
 getRows();
 
-// while (stilllooking) {
-//     let cell1 = "";
-//     let cell2 = "";
-//     let cell3 = "";
-//     let cell4 = "";
-//     let commacount = 0;
-//     let parserarray = [];
+while (stilllooking) {
+    let cell1 = "";
+    let cell2 = "";
+    let cell3 = "";
+    let cell4 = "";
+    let commacount = 0;
+    let parserarray = [];
 
-//     for (i = 0; i < parseme.length; i++){
-//         if (parseme.charAt(i) == "\n") {
-//             console.log("cell1 " + cell1,"cell2 " + cell2,"cell3 " + cell3,"cell4 " + cell4)
-//             commacount = 0;
-//             cell1 = "";
-//             cell2 = "";
-//             cell3 = "";
-//             cell4 = "";
-//         }
-//         if (parseme.charAt(i) == ",") {
-//             commacount += 1;
-//             i++;
-//         }
-//         switch (commacount) {
-//             case 0:
-//                 cell1 += parseme.charAt(i);
-//                 break;
-//             case 1:
-//                 cell2 += parseme.charAt(i);
-//                 break;
-//             case 2:
-//                 cell3 += parseme.charAt(i);
-//                 break;
-//             case 3:
-//                 cell4 += parseme.charAt(i);
-//                 break;
-//         }
-//     }
-//     stilllooking = false;
-// }
+    for (i = 0; i < parseme.length; i++){
+        if (parseme.charAt(i) == "\n") {
+            parserarray.unshift([cell1,cell2,cell3,cell4]);
+            i+=1;
+            commacount = 0;
+            cell1 = "";
+            cell2 = "";
+            cell3 = "";
+            cell4 = "";
+        }
+        if (parseme.charAt(i) == ",") {
+            commacount += 1;
+            i++;
+        }
+        switch (commacount) {
+            case 0:
+                cell1 += parseme.charAt(i);
+                break;
+            case 1:
+                cell2 += parseme.charAt(i);
+                break;
+            case 2:
+                cell3 += parseme.charAt(i);
+                break;
+            case 3:
+                cell4 += parseme.charAt(i);
+                break;
+        }
+    }
+    parserarray.reverse();
+    console.log(parserarray)
+    stilllooking = false;
+}
