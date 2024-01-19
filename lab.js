@@ -20,13 +20,13 @@ function getColumns() {
 }
 
 function parseData() {
+    let parserarray = [];
     while (stilllooking) {
         let cell1 = "";
         let cell2 = "";
         let cell3 = "";
         let cell4 = "";
         let commacount = 0;
-        let parserarray = [];
 
         for (i = 0; i < parseme.length; i++){
             if (i == (parseme.length - 1))
@@ -36,7 +36,6 @@ function parseData() {
             }
             if (parseme.charAt(i) == "\n") {
                 parserarray.unshift([cell1,cell2,cell3,cell4]);
-                console.log(parserarray)
                 i+=1;
                 commacount = 0;
                 cell1 = "";
@@ -62,12 +61,18 @@ function parseData() {
                     cell4 += parseme.charAt(i);
                     break;
             }
-        }
-        parserarray.reverse();
-        console.log(parserarray)
         stilllooking = false;
+    }
+    parserarray.reverse();
+    return parserarray;
     }
 }
 
+
+function convertToJSON(anarray){
+
+    return 
+}
+
 getColumns();
-parseData();
+convertToJSON(parseData());
