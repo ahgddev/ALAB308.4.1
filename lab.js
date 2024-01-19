@@ -84,10 +84,17 @@ function convertToJSON(anarray){
         for (data = 0; data < rows; data++){
            tempObject[anarray[0][data]] = anarray[j][data];
         }
-        jsonarray[i] = tempObject;
-        
+        jsonarray[i] = tempObject;   
     }
-    console.log(jsonarray);
+    return jsonarray;
 }
 
-convertToJSON(parseData());
+// Part 4: Sorting and Manipulating Data
+
+let JSONconversion = convertToJSON(parseData());
+// console.log(JSONconversion)
+
+JSONconversion.pop();
+JSONconversion.unshift({ id: "48", name: "Barry", occupation: "Runner", age: "25" });
+JSONconversion[JSONconversion.length - 1] = {id: "7", name: "Bilbo", occupation: "None", age: "111" };
+console.log(JSONconversion)
