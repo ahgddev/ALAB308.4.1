@@ -92,7 +92,6 @@ function convertToJSON(anarray){
 // Part 4: Sorting and Manipulating Data
 
 let JSONconversion = convertToJSON(parseData());
-// console.log(JSONconversion)
 
 JSONconversion.pop();
 JSONconversion.unshift({ id: "48", name: "Barry", occupation: "Runner", age: "25" });
