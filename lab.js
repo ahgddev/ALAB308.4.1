@@ -8,7 +8,6 @@ function getColumns() {
     for (i = 0; i < parseme.length; i++){
         if (parseme.charAt(i) == "\n") {
             columncount += 1;
-            console.log(columncount);
             return columncount;
         } else if (parseme.charAt(i) == ",") {
             columncount += 1;
@@ -70,8 +69,20 @@ function parseData() {
 
 
 function convertToJSON(anarray){
+    let jsonarray = [];
+    let columns = getColumns();
+    let rows = anarray.length - 1;
+    let tempObject = {};
+    let j = 0;
 
-    return 
+    for (i = 0; i < columns; i++){
+        j = i+1;
+        for (data = 0; data < rows; data++){
+           tempObject[anarray[0][data]] = anarray[j][data];
+        //    continue
+        }
+        console.log(tempObject)
+    }
 }
 
 getColumns();
