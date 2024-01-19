@@ -94,6 +94,19 @@ let JSONconversion = convertToJSON(parseData());
 JSONconversion.pop();
 JSONconversion.splice(1, 0, {id: "48", name: "Barry", occupation: "Runner", age: "25" });
 JSONconversion.splice((JSONconversion.length), 0, {id: "7", name: "Bilbo", occupation: "None", age: "111" });
-console.log(JSONconversion)
+
+function avgAge(JSONitem) {
+    let sum = 0;
+    for (innerarray = 0; innerarray < JSONitem.length; innerarray++){
+        if(JSONitem[innerarray].age == undefined){
+            sum += parseInt(JSONitem[innerarray].Age)
+        } else {
+            sum += parseInt(JSONitem[innerarray].age)
+        }
+    }
+    return sum/JSONitem.length;
+}
+
+avgAge(JSONconversion)
 
 // Part 5: Full Circle
