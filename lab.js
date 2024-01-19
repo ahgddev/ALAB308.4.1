@@ -69,25 +69,25 @@ function parseData() {
     }
 }
 
+// Part 3: Transforming Data
 
 function convertToJSON(anarray){
     let jsonarray = [];
     let columns = getColumns();
     let rows = anarray.length - 1;
-    let tempObject = {};
     let j = 0;
+    
 
     for (i = 0; i < columns; i++){
         j = i+1;
+        const tempObject = {};
         for (data = 0; data < rows; data++){
            tempObject[anarray[0][data]] = anarray[j][data];
         }
-        //Need to fix this not pushing correctly.
-        jsonarray.push(tempObject)
+        jsonarray[i] = tempObject;
+        
     }
-    jsonarray.reverse()
-    console.log(jsonarray)
+    console.log(jsonarray);
 }
 
-getColumns();
 convertToJSON(parseData());
