@@ -18,6 +18,8 @@ function getColumns() {
     }
 }
 
+// Part 2: Expanding Functionality
+
 function parseData() {
     let parserarray = [];
     while (stilllooking) {
@@ -109,5 +111,11 @@ function avgAge(JSONitem) {
 
 // Part 5: Full Circle
 function JSONtoCSV(JSONitem){
+    let finalCSV = ""
+    JSONitem.forEach(element => {
+        console.log(element)
+    });
 
 }
+
+JSONtoCSV(JSONconversion)
