@@ -93,7 +93,8 @@ function convertToJSON(anarray){
 
 let JSONconversion = convertToJSON(parseData());
 
+console.log(JSONconversion)
 JSONconversion.pop();
-JSONconversion.unshift({ id: "48", name: "Barry", occupation: "Runner", age: "25" });
+JSONconversion[1] = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
 JSONconversion[JSONconversion.length - 1] = {id: "7", name: "Bilbo", occupation: "None", age: "111" };
 console.log(JSONconversion)
