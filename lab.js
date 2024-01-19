@@ -3,15 +3,15 @@
 let parseme ="ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 let stilllooking = true;
 
-function getRows() {
-    let rowcount = 0;
+function getColumns() {
+    let columncount = 0;
     for (i = 0; i < parseme.length; i++){
         if (parseme.charAt(i) == "\n") {
-            rowcount += 1;
-            console.log(rowcount);
-            return rowcount;
+            columncount += 1;
+            console.log(columncount);
+            return columncount;
         } else if (parseme.charAt(i) == ",") {
-            rowcount += 1;
+            columncount += 1;
             i++;
         } else {
             continue;
@@ -19,7 +19,7 @@ function getRows() {
     }
 }
 
-getRows();
+getColumns();
 
 while (stilllooking) {
     let cell1 = "";
