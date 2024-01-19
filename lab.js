@@ -107,6 +107,7 @@ function avgAge(JSONitem) {
     return sum/JSONitem.length;
 }
 
-avgAge(JSONconversion)
-
 // Part 5: Full Circle
+function JSONtoCSV(JSONitem){
+
+}
