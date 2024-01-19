@@ -9,12 +9,16 @@ while (stilllooking) {
     let cell3 = "";
     let cell4 = "";
     let commacount = 0;
+    let parserarray = [];
 
     for (i = 0; i < parseme.length; i++){
         if (parseme.charAt(i) == "\n") {
             console.log("cell1 " + cell1,"cell2 " + cell2,"cell3 " + cell3,"cell4 " + cell4)
-            stilllooking = false;
-            break;
+            commacount = 0;
+            cell1 = "";
+            cell2 = "";
+            cell3 = "";
+            cell4 = "";
         }
         if (parseme.charAt(i) == ",") {
             commacount += 1;
@@ -35,4 +39,5 @@ while (stilllooking) {
                 break;
         }
     }
+    stilllooking = false;
 }
