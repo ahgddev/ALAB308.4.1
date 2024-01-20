@@ -65,8 +65,8 @@ function parseData() {
         stilllooking = false;
     }
     parserarray.reverse();
-    return parserarray;
     }
+    return parserarray;
 }
 
 // Part 3: Transforming Data
@@ -128,4 +128,7 @@ function JSONtoCSV(JSONitem){
    return finalCSV
 }
 
-JSONtoCSV(JSONconversion)
+
+console.log(JSONconversion)
+console.log(avgAge(JSONconversion))
+console.log(JSONtoCSV(JSONconversion))
