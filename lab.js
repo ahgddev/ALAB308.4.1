@@ -112,9 +112,16 @@ function avgAge(JSONitem) {
 // Part 5: Full Circle
 function JSONtoCSV(JSONitem){
     let finalCSV = ""
-    JSONitem.forEach(element => {
-        console.log(element)
-    });
+
+   JSONitem.forEach(element => {
+    processJSONObjects(element)
+   });
+   
+   function processJSONObjects(dataObject){
+    let tempString = Object.values(dataObject).toString();
+    console.log(tempString)
+   }
+
 
 }
 
